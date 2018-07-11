@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% block onevideo %}
+
+{% load staticfiles %}
+
+
+<h1>{{video.Video_title}}</h1>
+<h6>{{video.Video_time|date:'d-m-Y'}}</h6>
+
+<iframe width="426" height="240" src={{video.Video_URL}} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<h3>{{video.Video_o}}</h3>
+<h2>
+    <a href="addlikes/{{video.id}}"><img src="{% static 'img_like.png' %}" width="40px" height="40"></a>
+    {{video.Video_like}}
+
+</h2>
+    {% for com in comment %}
+        <h4>{{com}}</h4>
+    {% endfor %}
+
+        <h2>
+            {% if username %}
+            <form action="/FanVideo/addcomment/{{video.id}}" method="post">{% csrf_token %}{{form}}<input type="submit" value="Добавить комментарий"></form>
+            {% endif %}
+        </h2>
+
+
+{% endblock %}
