@@ -12,23 +12,8 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-sm bg-light">
-  <ul class="navbar-nav">
-   {% if username %}
-    <li class="nav-item"><a href="/auth/logout/">Выйти ({{ username }})</a></li>
-   {% else %}
-    <li class="nav-item"><a href="/auth/login/">Войти</a></li>
-   {% endif %}
-  </ul>
-</nav>
 <a href="/" class="btn btn-info" role="button">Главная</a>
 <a href="/FanVideo/" class="btn btn-info" role="button">Все видео</a>
-
-<div class="container">
-    {% block onevideo %}{% endblock %}
-    {% block videop %}{% endblock %}
-    {% block login %}{% endblock %}
-	{% block firstpage %}{% endblock %}
-</div>
-
+<a href="/" class="btn btn-info" role="button">Обо всем и не о чем</a>
+<a href="/" class="btn btn-info" role="button">Игрушка</a>
 </body>

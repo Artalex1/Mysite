@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import include, re_path
 from fanvideo import urls
 from login import loginurls
+from . import views
 
 urlpatterns = [
     re_path(r'admin/', admin.site.urls),
     re_path(r'FanVideo/', include(urls)),
     re_path(r'auth/', include(loginurls)),
+	re_path(r'^$', views.firstpage),
 ]
