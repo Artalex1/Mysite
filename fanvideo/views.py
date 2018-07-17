@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.template.context_processors import csrf
 from . import forms
 from django.contrib import auth
+from datetime import timezone
 
 #def Hello(request):
  #   return HttpResponse('<H1>Hello fucking world!!!</H1>')
@@ -56,19 +57,25 @@ def addlikes1(request, Video_id):
 
 def addlikes(request, Video_id):
     path = request.path
-    if Video_id not in request.COOKIES:
+    global addlikeind
+    if 'Vadd' in path:
+        response = redirect('/FanVideo/')
+    else:
+        response = redirect('/FanVideo/onevideo/' + Video_id)
+    if Video_id not in request.COOKIES or request.COOKIES.get(Video_id) == "delete_test":
         video = Video.objects.get(id=Video_id)
         video.Video_like += 1
         video.save()
-        if 'Vadd' in path:
-            response = redirect('/FanVideo/')
-        else:
-            response = redirect('/FanVideo/onevideo/' + Video_id)
         response.set_cookie(Video_id, "test")
+        addlikeind = "test"
         return response
-    if 'Vadd' in path:
-        return redirect('/FanVideo/')
-    return redirect('/FanVideo/onevideo/' + Video_id)
+    elif request.COOKIES.get(Video_id) == "test":
+        video = Video.objects.get(id=Video_id)
+        video.Video_like -= 1
+        video.save()
+        addlikeind = None
+        response.set_cookie(Video_id, "delete_test")
+        return response
 
 def dislikes(request, Video_id):
     video = Video.objects.get(id=Video_id)

@@ -18,6 +18,8 @@ class Comment(models.Model):
         db_table = "Comment"
     comment_text = models.TextField(verbose_name="Комментарий")
     comment_video = models.ForeignKey(Video, True)
+    comment_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.comment_text
+

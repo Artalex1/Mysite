@@ -5,19 +5,24 @@
         {% load staticfiles %}
         {% for vid in Video %}
             <h1><a href="onevideo/{{vid.id}}">{{ vid.Video_title }}</a></h1>
-            <iframe width="426" height="240" src={{vid.Video_URL}} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe src={{vid.Video_URL}} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <h6>{{vid.Video_time|date:"Y-m-d"}}</h6>
 
             <h3>{{vid.Video_o}}</h3>
 
             <h2>
-                <a href="Vaddlikes/{{vid.id}}"><img src="{% static 'img_like.png' %}" width="40px" height="40"></a>
+                <a href="Vaddlikes/{{vid.id}}">
+                    <img src="{% static 'img_like.png' %}" width="40px" height="40">
+                </a>
                 {{vid.Video_like}}
 
             </h2>
-                {% for  com in vid.comments %}
-                    <h3>{{com}}</h3>
-                {% endfor %}
+              <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#{{ vid.id }}demo">Comments</button>
+                <div id="{{ vid.id }}demo" class="collapse">
+                    {% for com in vid.comments %}
+                        <h3>{{com}}</h3>
+                    {% endfor %}
+                </div>
         {% endfor %}
     </body>
 </html>

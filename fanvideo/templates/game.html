@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% block game %}
+
+{% load staticfiles %}
+
+    <h2>Game of 100</h2>
+    <div class="container mt-2">
+
+  <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Правила игры</button>
+  <div id="demo" class="collapse">
+    <p>Вначале предосттавляется право выбора первого хода.</p>
+    <p>Игроки (Вы и компьютер) поочередно пишут число от 1 до 5 включительно (1, 2, 3, 4, 5).</p>
+    <p>Число от хода каждого игрока складывается.</p>
+    <p>Тот, после хода которого сумма станет равной или больше 100 проиграет.</p>
+  </div>
+</div>
+    <h6>Download frrom Yandex disk</h6>
+    <a href="https://yadi.sk/d/Gj7Iqz5e3ZFoxD" target="_blank">
+		<img alt="Download_yandex_disk" src="{% static 'download.png' %}" class="rounded" width="40px"/>
+	</a>
+{% endblock %}

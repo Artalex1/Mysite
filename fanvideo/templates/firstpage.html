@@ -1,19 +1,14 @@
-<head>
+{% extends 'main.html' %}
+{% block firstpage %}
+    <h1>
+        <p class="font-italic font-weight-bold" align="center"> The woods are lovely,</p>
+        <p class="font-italic font-weight-bold" align="center"> dark and deep,</p>
+        <p class="font-italic font-weight-bold" align="center">  but I have promises to keep,</p>
+        <p class="font-italic font-weight-bold" align="center"> and miles to go before I sleep,</p>
+        <p class="font-italic font-weight-bold" align="center"> and miles to go before I sleep...</p>
 
-    <title>
-        Main page
-    </title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-</head>
 
-<body>
-<a href="/" class="btn btn-info" role="button">Главная</a>
-<a href="/FanVideo/" class="btn btn-info" role="button">Все видео</a>
-<a href="/" class="btn btn-info" role="button">Обо всем и не о чем</a>
-<a href="/" class="btn btn-info" role="button">Игрушка</a>
-</body>
+    <p class="font-italic font-weight-bold" align="right">Robert Frost</p>
+
+    </h1>
+{% endblock %}

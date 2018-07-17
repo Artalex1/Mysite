@@ -23,5 +23,8 @@ urlpatterns = [
     re_path(r'admin/', admin.site.urls),
     re_path(r'FanVideo/', include(urls)),
     re_path(r'auth/', include(loginurls)),
-	re_path(r'^$', views.firstpage),
+    re_path(r'^$', views.firstpage),
+    re_path(r'^about$', views.about),
+    re_path(r'^game$', views.game),
+
 ]

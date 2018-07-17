@@ -1,14 +1,72 @@
 <head>
 
     <title>
-        Main page
+        Artalex1
     </title>
+
+
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+
+    <style>
+
+        body{
+            background: #000000 url({% static 'bg.jpg' %}) no-repeat fixed center top;
+        }
+
+      /* Make the image fully responsive */
+      .carousel-inner img {
+          width: 100%;
+      }
+
+      iframe{
+
+          /*width: 100%;*/
+          /*height: 50%;*/
+      }
+
+        a:link{
+            text-decoration:none;
+        }
+
+        #footer img:hover{
+            opacity:0.8;
+        }
+
+        .shadow_style{
+            font-family:"Times New Roman", Times, serif;
+            font-style:italic;
+            text-shadow: -5px -5px 30px #00A000,
+                     -5px 5px 30px #00A000,
+                     5px -5px 30px #00A000,
+                     5px 5px 30px #00A000;
+            text-align:center;
+            margin:20px 5% 20px 5%;
+        }
+
+        div.b{
+            width:90%;
+            padding: 20px;
+            margin:20px 5% 20px 5%;
+            background-color:rgba(255, 255, 255, 50%);
+            /*background-color:#9ACD32;*/
+            box-shadow: inset 0px 0px 50px 10px #00A000, 0px 0px 5px 1px #000000;
+            border-radius:15px;
+        }
+
+        pre, p{
+            font-size: 15pt;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -21,14 +79,60 @@
    {% endif %}
   </ul>
 </nav>
-<a href="/" class="btn btn-info" role="button">Главная</a>
-<a href="/FanVideo/" class="btn btn-info" role="button">Все видео</a>
 
-<div class="container">
+
+<div class="navbar navbar-expand-sm bg-success navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/">
+                Main
+            </a>
+        </li>
+                <li class="nav-item">
+            <a class="nav-link" href="/FanVideo/">
+                Video
+            </a>
+        </li>
+                <li class="nav-item">
+            <a class="nav-link" href="/about">
+                Info
+            </a>
+        </li>
+                <li class="nav-item">
+            <a class="nav-link" href="/game">
+                Game
+            </a>
+        </li>
+    </ul>
+
+</div>
+
+<div class="container-fluid b">
     {% block onevideo %}{% endblock %}
     {% block videop %}{% endblock %}
     {% block login %}{% endblock %}
 	{% block firstpage %}{% endblock %}
+	{% block about %}{% endblock %}
+	{% block game %}{% endblock %}
+
 </div>
+
+<!--Это подвал тела html-блога обо мне-->
+<!--target="_blank" чтобы открывалось в новом окне-->
+   <footer>
+      <div id="footer" class="container-fluid b" align="right">
+          	<a href="https://vk.com/artalex1" target="_blank">
+                <img alt="Vk" src="{% static 'Vk_logo.png' %}" class="rounded" width="40px"/>
+            </a>
+            <a href="https://t.me/Artalex1" target="_blank">
+                <img alt="Telegram" src="{% static 'Tele.png' %}" class="rounded" width="40px"/>
+            </a>
+            <a href="https://mail.yandex.by/?uid=26000658&login=artalex1#inbox" target="_blank">
+                <img alt="E-mail" src="{% static 'Email-Logo-png.png' %}" class="rounded" width="40px"/>
+            </a>
+            <h5 class="copyright" align="right">&copy; 2018 Alex project / All rights reserved</h5>
+      </div>
+   </footer>
+<!--Это конец подвала тела html-блога обо мне-->
 
 </body>
