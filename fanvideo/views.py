@@ -57,7 +57,6 @@ def addlikes1(request, Video_id):
 
 def addlikes(request, Video_id):
     path = request.path
-    global addlikeind
     if 'Vadd' in path:
         response = redirect('/FanVideo/')
     else:

@@ -1,5 +1,5 @@
-from django.urls import include, re_path
-from fanvideo.views import addlikes, dislikes, hello, onevideo, WorkBD, addcomment
+from django.urls import re_path
+from fanvideo.views import addlikes, dislikes, onevideo, WorkBD, addcomment
 
 urlpatterns = [
     re_path(r'^$', WorkBD),

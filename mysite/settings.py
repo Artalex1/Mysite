@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['Artalex1.pythonanywhere.com', '127.0.0.1']
 INSTALLED_APPS = [
     'login',
     'fanvideo',
+    'book',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

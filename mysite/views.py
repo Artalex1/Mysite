@@ -9,6 +9,10 @@ def about(request):
     return render(request, 'about.html')
 
 
+def info(request):
+    return render(request, 'info.html')
+
+
 def game(request):
     return render(request, 'game.html')
 

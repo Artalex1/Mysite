@@ -3,151 +3,112 @@
 
 {% load staticfiles %}
 
+<head>
+  <title>About me page</title>
+</head>
 
 
+<div class="container">
 
-<div class="container mt-3">
+<div class="container" align="center">
+        
+  <img src="{% static "I.jpg" %}" class="rounded-circle" alt="My photo" width="250px">
+</div>
 
-<h2>About Perfect circle</h2>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <p>Доброго времени суток!</p>
+  <p>Меня зовут Александр, nickname Artalex1.</p>
+  <p>
+      Живу с супругой и дочкой в Минске. В столицу перехал после получения высшего образования в
+      ГУВПО"Белорусско-Российский университет" г. Могилева.
+      Там же продолжил учебу в магистратуре, а теперь уже и в аспирантуре по специальности инженер-энергетик.
+  </p>
+  <p>
+      Раз завел разговор об учебе: В июле 2018 окончил курс Python developer от академии Belhard,
+      благодаря чему и появился данный сайтик. И это не едиственные пройденные мной курсы:
+  </p>
+
+<div id="demo" class="carousel slide" data-ride="carousel" data-file-width="500px">
 
   <!-- Indicators -->
   <ul class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
   </ul>
   
   <!-- The slideshow -->
   <div class="carousel-inner">
-    <div class="carousel-item">
-      <img src={% static "im1.png" %} alt="No_photo">
-    </div>
     <div class="carousel-item active">
-      <img src={% static "im2.png" %} alt="No_photo">
+      <img src="{% static "HTML_certificate.jpg" %}" alt="html">
     </div>
     <div class="carousel-item">
-      <img src={% static "im3.jpg" %} alt="No_photo">
+      <img src="{% static "CSS_certificate.jpg" %}" alt="css">
     </div>
     <div class="carousel-item">
-      <img src={% static "im4.png" %} alt="No_photo">
+      <img src="{% static "JavaScript_certificate.jpg" %}" alt="js">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static "Python_certificate.jpg" %}" alt="py">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static "Py_BelHard_certificate.png" %}" alt="py_bel">
     </div>
   </div>
   
   <!-- Left and right controls -->
-  <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </a>
-  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+  <a class="carousel-control-next" href="#demo" data-slide="next">
     <span class="carousel-control-next-icon"></span>
   </a>
 </div>
 
+  <p>
+      Не скажу, что я полиглот, но прочитать книгу или посмотреть фильм на английском у меня получается.
+      А также есть базовые знания по китайскому языку, так что Ni hao 你好!)
+  </p>
+
+  <p>
+      С детства увлекаюсь рисованием и люблю фотографировать, что привело к уверенному использованию
+      Adobe Photoshop и Lightroom. И, если у кого есть желание сделать пару снимков для своего альбома,
+      могу помочь в реализации)
+  </p>
+
+<div id="demo1" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo1" data-slide-to="0" class="active"></li>
+    <li data-target="#demo1" data-slide-to="1"></li>
+    <li data-target="#demo1" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static "my_photo_1.jpg" %}" alt="my_photo1">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static "my_photo_2.jpg" %}" alt="my_photo2">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static "my_photo_3.jpg" %}" alt="my_photo3">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static "my_photo_4.jpg" %}" alt="my_photo3">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo1" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo1" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
 </div>
 
-<div class="container mt-2">
-
-  <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">A Perfect Circle</button>
-  <div id="demo" class="collapse">
-      <p>
-            A Perfect Circle is an American rock supergroup formed in 1999 by guitarist Billy Howerdel
-        and Tool vocalist Maynard James Keenan. A Perfect Circle has released four studio albums,
-        the first three releasing in the early 2000s: Mer de Noms, their debut album in 2000,
-        and followed up by Thirteenth Step in 2003; then in 2004, Emotivean album of radically
-        re-worked cover songs titles. Shortly after Emotive's release, the band went on hiatus;
-        Keenan returned to Tool and started up solo work under the band name Puscifer;
-        and Howerdel released a solo album, Keep Telling Myself It's Alright, under the moniker Ashes Divide.
-        Band activity was sporadic in the following years; the band reformed in 2010,
-        and played live shows on and off between 2010 and 2013, but fell into inactivity
-        after the release of their greatest hits album, Three Sixty, and a live album box set,
-        A Perfect Circle Live: Featuring Stone and Echo in late 2013.
-        The band reformed in 2017 to record a fourth album, Eat the Elephant,
-        which was released on April 20, 2018.
-      </p>
-      <p>
-            Prone to downtime due to Keenan's other musical commitments,
-        the band has featured a variety of musicians in the other roles throughout
-        its alternating periods of activity and inactivity. The original
-        incarnation of the band included Paz Lenchantin on bass,
-        Troy Van Leeuwen on guitar, and Josh Freese on drums.
-        Primus drummer Tim Alexander had briefly stood in as a drummer prior
-        to Freese in the band's initial live shows, however this was prior
-        to releasing any material. Band collaborator and producer Danny Lohner
-        and Marilyn Manson bassist Jeordie White were also members for a short
-        period in the early 2000s. The band's current lineup features Smashing
-        Pumpkins guitarist James Iha, bassist Matt McJunkins, and drummer
-        Jeff Friedl, the latter two also being contributors to the related Puscifer
-        and Ashes Divide projects. Despite the varied cast and numerous
-        lineup changes, the stylistic content of A Perfect Circle's songs
-        has remained consistent with Howerdel as music composer, and Keenan
-        writing lyrics and vocal melodies. The band's studio albums have been
-        generally well received critically and commercially, with their
-        three studio albums selling 4 million copies collectively as of 2005.
-          </p>
-  </div>
-
-  <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo2">Logo history</button>
-  <div id="demo2" class="collapse">
-        <p>
-
-            I designed the original logo of a symbol, which outwardly looks like a larger and smaller crescent, but actually holds
-               two perfect circles. I designed the logo purposefully to represent Maynard [James Keenan] and me.
-              I thought the logo represented "3 Libras" with its line, "You don't see me at all." I related to the song
-              feeling like there's a lot to offer, but invisible. Millions suffer with that feeling every day.
-              You can stare at something for so long before you see it in a new light. The insight from something you
-              discover on your own always means more ... the APC logo has two perfect circles in there; they're
-              just hard to see.
-        </p>
-        <p>
-            Billy Howerdel, on the band's logo.
-        </p>
-  </div>
-
-  <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo3">New album</button>
-  <div id="demo3" class="collapse">
-      <p>Eat the Elephant (2017–present)</p>
-      <p>A group of musicians performing on stage in front of a crowd.</p>
-      <p>A Perfect Circle performing at Pinkpop Festival, Netherlands in 2018</p>
-      <p>The band became active again in 2017,
-          with the announcement that they would reform to embark a North American tour in
-          April and May 2017, with the intention of using the live performances
-          of new material as motivation to finish recording the album, similar
-          to how they had embarked on their first 1999 tour to inspire the completion
-          of Mer de Noms. In March, the band announced they had signed
-          a new record contract – their first in thirteen years –
-          to release a fourth full-length studio album through
-          BMG Rights Management. Howerdel initially gave a tentative
-          timeframe of between November 2017 to early 2018 for the new album,
-          while Keenan stated that the album wouldn't be out in 2017.
-          A second North American tour began in October, and runs through December 2017.
-           The band continued to debut new songs during the tours, including
-          the tracks "Feathers" and "Hourglass".
-      </p>
-      <p>
-          The band's fourth studio album, Eat the Elephant,
-          was released on April 20, 2018.
-          Four singles were released in advance of the album; "The Doomed" in October 2017,
-          "Disillusioned" in January 2018, "TalkTalk" in February 2018 and
-          "So Long, And Thanks For All The Fish" in April 2018. The album marks the first time
-          the band opted to work with an outside music producer: Dave Sardy. Sardy helped Keenan
-          and Howerdel find common ground in musical ideas in the recording process,
-          helping them find a path to move forward in finishing the album. The band will
-          tour extensively in 2018 in support of the album, including performances at
-          Rock on the Range and Coachella. In June 2018, the band extended
-          their touring with a new North American leg towards the end of the year,
-          and released a music video for the song "The Contrarian". Iha was unavailable
-          to perform in the April through July performances due to his commitment to the
-          Smashing Pumpkin's 2018 reunion, and is temporarily replaced for the live
-          performances by Greg Edwards of Failure, though Iha still remains a member
-          of the band. Howerdel noted that he would like to see the band
-          keep active beyond the Eat the Elephant album cycle, but that future
-          activity, as it had historically been, is dependent on Keenan's
-          limited availability and commitments to his other projects.
-          When asked about if there would be further albums, in June 2018,
-          Keenan responded "Yeah, there should be".
-      </p>
-  </div>
 </div>
 
 {% endblock %}
