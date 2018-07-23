@@ -1,0 +1,67 @@
+{% extends 'main.html' %}
+{% block about %}
+
+{% load staticfiles %}
+
+  <title>Book</title>
+
+
+
+  <h2 class="text-info">{{articles.title}}</h2>
+    <img src="{{ articles.imgLink }}" class="rounded" alt="Book photo">
+  <h6 class="text-info">Опубликовано {{articles.date|date:"Y-m-d в H:i:s"}}</h6>
+
+    <p >
+        <a href="addlike/{{articles.id}}">
+          <img src="{% static 'img_like.png' %}" width="40px" alt="No photo"/>
+        </a>
+          {{articles.like}}
+    </p>
+
+    <p>{{articles.post|safe|linebreaks}}</p>
+    <p>Author is {{ articles.authot }}</p>
+
+  <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    About author
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+	  <div class="container">
+            <h4 class="modal-title">{{ articles.authot }}</h4>
+	  </div>
+          <button type="button" class="close" data-dismiss="modal">X</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+	  <img src="{{ articles.authotImgLink }}" class="img-thumbnail" alt="Author photo">
+          <p>{{ articles.authorData }}</p>
+	  <h4>
+	    <a href="{{ articles.authorURL }}">
+		Look at wiki
+	    </a>
+	  </h4>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+    <p></p>
+    <p>Download Link</p>
+    <a href="{{articles.bookURL}}">
+        <img alt="Download" src="{% static 'download.png' %}" class="rounded" width="40px"/>
+    </a>
+{% endblock %}

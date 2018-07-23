@@ -1,0 +1,76 @@
+{% extends 'main.html' %}
+{% block about %}
+
+{% load staticfiles %}
+
+  <title>Books</title>
+
+  {% for post in object_list %}
+    <a href="/book/{{post.id}}"><h3>{{post.title}}</h3></a>
+    <h6>Добавлено: {{post.date|date:"d-m-Y"}}</h6>
+
+  <p >
+    <a href="addlikes/{{post.id}}">
+      <img src="{% static 'img_like.png' %}" width="40px" alt="No photo"/>
+    </a>
+      {{post.like}}
+  </p>
+
+  <div class="row">
+    <div class="col-sm-2">
+	  <img src="{{ post.imgLink }}" class="rounded" alt="Book photo" width="150px">
+    </div>
+    <div class="col-sm-10">
+        <div class="container mt-3">
+
+  <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo{{post.id}}">About book</button>
+  <div id="demo{{post.id}}" class="collapse">
+    <p>{{ post.post }}</p>
+  </div>
+  <p>Author is {{ post.authot }}</p>
+
+  <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{post.id}}">
+    About author
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal{{post.id}}">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+	  <div class="container">
+            <h4 class="modal-title">{{ post.authot }}</h4>
+	  </div>
+          <button type="button" class="close" data-dismiss="modal">X</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+	  <img src="{{ post.authotImgLink }}" class="img-thumbnail" alt="Author photo">
+          <p>{{ post.authorData }}</p>
+	  <h4>
+	    <a href="{{ post.authorURL }}">
+		Look at wiki
+	    </a>
+	  </h4>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  </div>
+    <hr>
+      <p></p>
+{% endfor %}
+{% endblock %}
